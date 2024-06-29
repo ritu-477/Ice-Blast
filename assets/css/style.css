@@ -613,8 +613,8 @@
 }
 
 /* < !-- Join Our Mailing List --> */
-.pt_58 {
-    padding-top: 58px;
+.pt_100 {
+    padding-top: 48px;
 }
 
 .mail_box {
@@ -980,6 +980,15 @@ input[type=checkbox]:checked:before {
     margin-top: -2px;
 }
 
+.mb_50 {
+    margin-bottom: -100px;
+}
+
+.my_100 {
+    margin-top: -100px;
+    margin-bottom: -100px;
+}
+
 
 
 
@@ -1070,7 +1079,6 @@ input[type=checkbox]:checked:before {
 }
 
 @media(min-width:576px) {
-
     .sm_lh_75 {
         line-height: 75px;
     }
@@ -1146,6 +1154,10 @@ input[type=checkbox]:checked:before {
     .mt_40 {
         margin-top: 40px;
     }
+
+    .pt_100 {
+        padding-top: 70px;
+    }
 }
 
 @media(min-width:768px) {
@@ -1189,6 +1201,10 @@ input[type=checkbox]:checked:before {
 
     .accordian2 {
         padding: 32px;
+    }
+
+    .pt_100 {
+        padding-top: 100px;
     }
 }
 
