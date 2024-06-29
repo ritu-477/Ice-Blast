@@ -78,13 +78,13 @@ var carousel = new Swiper(".swiper-carousel", {
         modifier: 1.5,
         slideShadows: false,
     },
-   
+
     breakpoints: {
         600: {
             slidesPerView: 2.5,
         },
     },
-    
+
 });
 
 const accordionbtn2 = document.querySelectorAll(".accordionbtn2")
