@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/slider.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
         integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -11,6 +15,9 @@
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -19,543 +26,560 @@
     <title>Ice-Blast</title>
 </head>
 
-<body>
-    <header class="hero-bg min-vh-100 d-flex flex-column justify-content-center">
-        <nav>
-            <div class="container">
-                <div class="py_14 align-items-center justify-content-center gap_65 d-xl-flex d-none">
-                    <div class="d-flex align-items-center gap_10">
-                        <a href=""><img src="./assets/images/svg/loaction-svg.svg" alt="loction"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
+<body class="overflow-x-hidden">
+<div class="overflow-x-hidden">
+        <header class="hero-bg min_vh_100 d-flex flex-column justify-content-center pb-5">
+            <nav>
+                <div class="container">
+                    <div class="py_14 align-items-center justify-content-center gap_65 d-xl-flex d-none">
+                        <div class="d-flex align-items-center gap_10">
+                            <a href=""><img src="./assets/images/svg/loaction-svg.svg" alt="loction"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
+                        </div>
+                        <div class="d-flex align-items-center gap_10">
+                            <a href="mailto:someone@example.com"><img src="./assets/images/svg/mail-svg.svg" alt="mail"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                book@dryiceblastingpro.co.uk</p>
+                        </div>
+                        <div class="d-flex align-items-center gap_10">
+                            <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-svg.svg"
+                                    alt="phone"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                01865123456</p>
+                        </div>
+                        <div class="d-flex align-items-center gap_10">
+                            <a href=""><img src="./assets/images/svg/timer-svg.svg" alt="timer"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                Mon -
+                                Fri: 9am to 5pm</p>
+                        </div>
                     </div>
-                    <div class="d-flex align-items-center gap_10">
-                        <a href="mailto:someone@example.com"><img src="./assets/images/svg/mail-svg.svg" alt="mail"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            book@dryiceblastingpro.co.uk</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_10">
-                        <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-svg.svg"
-                                alt="phone"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            01865123456</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_10">
-                        <a href=""><img src="./assets/images/svg/timer-svg.svg" alt="timer"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            Mon -
-                            Fri: 9am to 5pm</p>
+                    <div class="hero-slider py_14 d-xl-none d-block" id="heroslider">
+                        <div class="d-flex align-items-center gap_10">
+                            <a href=""><img src="./assets/images/svg/loaction-svg.svg" alt="loction"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
+                        </div>
+                        <div class="d-flex align-items-center gap_10">
+                            <a href="mailto:someone@example.com"><img src="./assets/images/svg/mail-svg.svg" alt="mail"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                book@dryiceblastingpro.co.uk</p>
+                        </div>
+                        <div class="d-flex align-items-center gap_10">
+                            <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-svg.svg"
+                                    alt="phone"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                01865123456</p>
+                        </div>
+                        <div class="d-flex align-items-center gap_10">
+                            <a href=""><img src="./assets/images/svg/timer-svg.svg" alt="timer"></a>
+                            <p
+                                class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                                Mon -
+                                Fri: 9am to 5pm</p>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-slider py_14 d-xl-none d-block" id="heroslider">
-                    <div class="d-flex align-items-center gap_10">
-                        <a href=""><img src="./assets/images/svg/loaction-svg.svg" alt="loction"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_10">
-                        <a href="mailto:someone@example.com"><img src="./assets/images/svg/mail-svg.svg" alt="mail"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            book@dryiceblastingpro.co.uk</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_10">
-                        <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-svg.svg"
-                                alt="phone"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            01865123456</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_10">
-                        <a href=""><img src="./assets/images/svg/timer-svg.svg" alt="timer"></a>
-                        <p
-                            class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                            Mon -
-                            Fri: 9am to 5pm</p>
+                <div class="container">
+                    <div class="nav-box">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href=""><img src="./assets/images/png/logo-img.png" alt="logo" class="w_75"></a>
+                            <ul class="d-flex align-items-center gap-3 mb-0 ps-0 menulist" id="navbar">
+                                <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion" href="#home"
+                                        onclick="openNav()">Home</a></li>
+                                <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
+                                        href="#about" onclick="openNav()">About us</a></li>
+                                <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
+                                        href="#services" onclick="openNav()">Services</a></li>
+                                <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
+                                        href="#pricing" onclick="openNav()">Pricing</a></li>
+                                <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion" href="#blog"
+                                        onclick="openNav()">Blog</a></li>
+                                <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
+                                        href="#contact" onclick="openNav()">Contact us</a></li>
+                                <button
+                                    class="call-usbtn fw-bold text-16 lh_19 color_white d-flex align-items-center d-sm-none d-block">Call
+                                    Us</button>
+                            </ul>
+                            <div class="d-flex align-items-center gap_16">
+                                <button
+                                    class="call-usbtn fw-bold text-16 lh_19 color_white d-flex align-items-center d-sm-flex d-none">Call
+                                    Us</button>
+                                <div class="iconbox" onclick="openNav()">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="nav-box">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <a href=""><img src="./assets/images/png/logo-img.png" alt="logo" class="w_75"></a>
-                        <ul class="d-flex align-items-center gap-3 mb-0 ps-0 menulist" id="navbar">
-                            <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
-                                    href="#home" onclick="openNav()">Home</a></li>
-                            <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
-                                    href="#about" onclick="openNav()">About us</a></li>
-                            <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
-                                    href="#services" onclick="openNav()">Services</a></li>
-                            <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
-                                    href="#pricing" onclick="openNav()">Pricing</a></li>
-                            <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
-                                    href="#blog" onclick="openNav()">Blog</a></li>
-                            <li><a class="font_acumin-pro fw-bold text-16 lh_19 color-gray hover_nav transtion"
-                                    href="#contact" onclick="openNav()">Contact us</a></li>
+            </nav>
+            <div class="d-flex flex-grow-1 lg_pt-87 pt-48" id="home">
+                <div class="container">
+                    <div data-aos="zoom-in">
+                        <h1
+                            class="text-96 lh_60 sm_lh_75 md_lh_90 lg_lh_115 fw-bold font_titling max-w730 color_white text-center mx-auto mb-0 pb-3">
+                            Automotive Dry Ice Cleaning</h1>
+                        <p class="fw-normal font_acumin-pro text-20 lh_30 color_white max-w430 text-center mx-auto mb_40">
+                            Discover the ultimate clean for your machine.
+                            No chemicals, no abrasives and no drama.</p>
+                        <div class="d-flex justify-content-center align-items-center mb_40">
                             <button
-                                class="call-usbtn fw-bold text-16 lh_19 color_white d-flex align-items-center d-sm-none d-block">Call
-                                Us</button>
-                        </ul>
-                        <div class="d-flex align-items-center gap_16">
-                            <button
-                                class="call-usbtn fw-bold text-16 lh_19 color_white d-flex align-items-center d-sm-flex d-none">Call
-                                Us</button>
-                            <div class="iconbox" onclick="openNav()">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                                class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
+                                Instant Quote</button>
+                        </div>
+                        <div class="no-mess mx-auto d-flex align-items-center justify-content-center gap_28 flex-wrap">
+                            <div class="d-flex align-items-center gap_12">
+                                <img src="./assets/images/svg/click-svg.svg" alt="click">
+                                <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb-0">Non-Abrasive</p>
+                            </div>
+                            <div class="d-flex align-items-center gap_12">
+                                <img src="./assets/images/svg/click-svg.svg" alt="click">
+                                <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb-0">No Chemicals</p>
+                            </div>
+                            <div class="d-flex align-items-center gap_12">
+                                <img src="./assets/images/svg/click-svg.svg" alt="click">
+                                <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb-0">No Mess</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </nav>
-        <div class="d-flex flex-grow-1 lg_pt-87 pt-48 align-items-center justify-content-center" id="home">
+        </header>
+        <!-- cloud-section car-cleaning -->
+        <section class="cloud-bg position-relative z-3" id="about">
             <div class="container">
-                <h1
-                    class="text-96 lh_60 sm_lh_75 md_lh_90 lg_lh_115 fw-bold font_titling max-w730 color_white text-center mx-auto mb-0 pb-3">
-                    Automotive Dry Ice Cleaning</h1>
-                <p class="fw-normal font_acumin-pro text-20 lh_30 color_white max-w430 text-center mx-auto mb_40">
-                    Discover the ultimate clean for your machine.
-                    No chemicals, no abrasives and no drama.</p>
-                <div class="d-flex justify-content-center align-items-center mb_40">
+                <div class="row lg_py_100_80 md_80_80 sm_60_60 py_40">
+                    <div data-aos="fade-right" class="col-lg-6 col-12 d-flex justify-content-center">
+                        <div>
+                            <h2 class="font_titling fw-bold md_lh_57 lh_43 clr-primary-black max_351 mb-0">The Future of Car
+                                Cleaning</h2>
+                            <p class="font_acumin-pro fw-normal text-16 lh_24 clr-primary-black opacity_70 max_558 pt_13">No
+                                need to be overwhelmed by the thought of harsh chemicals and abrasive cleaning methods. Our
+                                dry
+                                ice blasting leaves
+                                your car spotless, reaching where no cloth can.</p>
+                            <div class="d-flex gap-3">
+                                <span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
+                                            fill="#D49E14" />
+                                    </svg>
+                                </span>
+                                <div class=" blank">
+                                    <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">Gentle Yet
+                                        Powerful</p>
+                                    <p class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal">
+                                        Our
+                                        dry ice method lifts dirt effortlessly without the need for harsh chemicals or
+                                        abrasive
+                                        techniques.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
+                                            fill="#D49E14" />
+                                    </svg>
+                                </span>
+                                <div class=" blank">
+                                    <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">Precision
+                                        Cleaning</p>
+                                    <p class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal">
+                                        See
+                                        how accurately we target the grunge zones, ensuring every inch of your car's
+                                        undercarriage and engine is
+                                        meticulously cleaned.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
+                                            fill="#D49E14" />
+                                    </svg>
+                                </span>
+                                <div class=" blank">
+                                    <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">Safe for
+                                        AlI
+                                        Vehicles</p>
+                                    <p class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal">
+                                        Perfect for all car types, from family hatchbacks to classic cars and
+                                        high-performance
+                                        vehicles.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
+                                            fill="#D49E14" />
+                                    </svg>
+                                </span>
+                                <div class=" blank">
+                                    <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">
+                                        Eco-Friendly
+                                        Approach</p>
+                                    <p
+                                        class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal mb-0">
+                                        Notice the absence of water or chemical runoff, showcasing our commitment to an
+                                        environmentally responsible cleaning
+                                        process.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="col-lg-6 col-12 d-flex justify-content-center pt-4 pt-lg-0">
+                        <div class="position-relative">
+                            <a target="_blank" href="https://youtu.be/EM_FKck0DTo?feature=shared"><img
+                                    src="./assets/images/webp/car-cleaningimg.webp" alt="carclraning" class="w-100"></a>
+                            <div class="play_icon d-flex justify-content-center align-items-center">
+                                <img src="./assets/images/svg/play-iconbtn.svg" alt="playbtn" class="w_30">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <p class="fw-bold text-16 lh_24 font_acumin-pro clr-primary-black mb_20">Like What You See? Get an
+                        Instant Quote</p>
                     <button
-                        class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
-                        Instant Quote</button>
-                </div>
-                <div class="no-mess mx-auto d-flex align-items-center justify-content-center gap_28 flex-wrap">
-                    <div class="d-flex align-items-center gap_12">
-                        <img src="./assets/images/svg/click-svg.svg" alt="click">
-                        <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb-0">Non-Abrasive</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_12">
-                        <img src="./assets/images/svg/click-svg.svg" alt="click">
-                        <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb-0">No Chemicals</p>
-                    </div>
-                    <div class="d-flex align-items-center gap_12">
-                        <img src="./assets/images/svg/click-svg.svg" alt="click">
-                        <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb-0">No Mess</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- cloud-section car-cleaning -->
-    <section class="cloud-bg position-relative z-3" id="about">
-        <div class="container">
-            <div class="row lg_py_100_80 md_80_80 sm_60_60 py_40">
-                <div class="col-lg-6 col-12 d-flex justify-content-center">
-                    <div>
-                        <h2 class="font_titling fw-bold md_lh_57 lh_43 clr-primary-black max_351 mb-0">The Future of Car
-                            Cleaning</h2>
-                        <p class="font_acumin-pro fw-normal text-16 lh_24 clr-primary-black opacity_70 max_558 pt_13">No
-                            need to be overwhelmed by the thought of harsh chemicals and abrasive cleaning methods. Our
-                            dry
-                            ice blasting leaves
-                            your car spotless, reaching where no cloth can.</p>
-                        <div class="d-flex gap-3">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
-                                        fill="#D49E14" />
-                                </svg>
-                            </span>
-                            <div class=" blank">
-                                <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">Gentle Yet
-                                    Powerful</p>
-                                <p class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal">
-                                    Our
-                                    dry ice method lifts dirt effortlessly without the need for harsh chemicals or
-                                    abrasive
-                                    techniques.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-3">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
-                                        fill="#D49E14" />
-                                </svg>
-                            </span>
-                            <div class=" blank">
-                                <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">Precision
-                                    Cleaning</p>
-                                <p class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal">
-                                    See
-                                    how accurately we target the grunge zones, ensuring every inch of your car's
-                                    undercarriage and engine is
-                                    meticulously cleaned.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-3">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
-                                        fill="#D49E14" />
-                                </svg>
-                            </span>
-                            <div class=" blank">
-                                <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">Safe for
-                                    AlI
-                                    Vehicles</p>
-                                <p class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal">
-                                    Perfect for all car types, from family hatchbacks to classic cars and
-                                    high-performance
-                                    vehicles.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap-3">
-                            <span>
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M11.076 21.2696C11.0123 21.2696 10.9493 21.2564 10.891 21.2309C10.8327 21.2054 10.7803 21.1681 10.737 21.1213L1.59918 11.2368C1.53827 11.1709 1.49788 11.0887 1.48298 11.0002C1.46807 10.9117 1.47928 10.8208 1.51524 10.7385C1.55121 10.6563 1.61036 10.5864 1.68546 10.5372C1.76056 10.4881 1.84835 10.462 1.93809 10.462H6.33655C6.40259 10.462 6.46786 10.4761 6.52796 10.5035C6.58805 10.5309 6.64158 10.5708 6.68492 10.6207L9.73883 14.1341C10.0689 13.4286 10.7078 12.2539 11.829 10.8225C13.4864 8.70631 16.5694 5.59411 21.8441 2.78463C21.946 2.73034 22.0646 2.71625 22.1764 2.74514C22.2883 2.77403 22.3852 2.84381 22.4481 2.94068C22.511 3.03756 22.5353 3.1545 22.5162 3.26841C22.497 3.38232 22.4359 3.48492 22.3448 3.55595C22.3247 3.57169 20.291 5.17323 17.9504 8.10672C15.7963 10.8063 12.9329 15.2204 11.5238 20.919C11.4991 21.0191 11.4415 21.1081 11.3603 21.1717C11.2791 21.2352 11.1789 21.2698 11.0758 21.2698L11.076 21.2696Z"
-                                        fill="#D49E14" />
-                                </svg>
-                            </span>
-                            <div class=" blank">
-                                <p class="mb-0 pb_6 font_acumin-pro text-16 lh_24 fw-bold clr-primary-black">
-                                    Eco-Friendly
-                                    Approach</p>
-                                <p
-                                    class="max_518 clr-primary-black opacity_70 text-16 lh_24 font_acumin-pro fw-normal mb-0">
-                                    Notice the absence of water or chemical runoff, showcasing our commitment to an
-                                    environmentally responsible cleaning
-                                    process.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 d-flex justify-content-center">
-                    <div class="video-container position-relative">
-                        <div class="play_icon d-flex justify-content-center align-items-center">
-                            <img src="./assets/images/svg/play-iconbtn.svg" alt="playbtn" id="playButton">
-                        </div>
-                        <video id="videoPlayer" class="ice-blast" controls playsinline muted>
-                            <source type="video/mp4" src="./assets/video/car-cleaning.mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center flex-column">
-                <p class="fw-bold text-16 lh_24 font_acumin-pro clr-primary-black mb_20">Like What You See? Get an
-                    Instant Quote</p>
-                <button
-                    class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center mb-2">Get
-                    Instant Quote</button>
-            </div>
-        </div>
-    </section>
-    <!-- dry-icing blasting -->
-    <section class="bg-color1 position-relative z-3 mt_1" id="services">
-        <div class="mt_1 mx-auto height_264"><img src="./assets/images/png/top-ector.png" alt="topvector"
-                class="w-100 h-100 mt_1"></div>
-        <div class="container">
-            <h2 class="font_titling fw-bold text-48 md_lh_57 lh_43 color_white text-center">Understanding Dry Ice
-                Blasting</h2>
-            <div
-                class="row py_118 pb_40 d-flex flex-xl-row flex-column-reverse align-items-center justify-content-center">
-                <div class="col-xl-6 col-12 d-flex justify-content-center">
-                    <div class="blank">
-                        <p
-                            class="fw-bold text-24 lh_36 font_acumin-pro color_white mb-0 pb_6 text-xl-start text-center">
-                            What is Dry Ice Blasting?</p>
-                        <p
-                            class="max_558 font_acumin-pro fw-normal text-18 lh_27 color_white opacity_90 mb-0 text-xl-start text-center">
-                            Dry ice blasting is an innovative
-                            cleaning technology that uses solid CO2 (carbon dioxide) pellets. These pellets are
-                            propelled at high speeds to clean surfaces. Unlike traditional cleaning methods, this
-                            process does not involve water
-                            or
-                            abrasive materials, making it incredibly safe and effective for delicate areas like engine
-                            bays, undercarriages, and
-                            even car interiors.</p>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-12 d-flex justify-content-end pb-5 pb-xl-0">
-                    <img src="./assets/images/png/dry-iceblast.png" alt="dryice" class="w-100 max-wimg2 img-absolute1">
-                </div>
-            </div>
-            <div class="row py_153 pb_40 d-flex align-content-center">
-                <div class="col-xl-6 col-12 d-flex justify-content-start pb-5 pb-xl-0">
-                    <img src="./assets/images/png/dry-iceblast2.png" alt="dryblast"
-                        class="w-100 max-wimg3 img-absolute2">
-                </div>
-                <div class="col-xl-6 col-12 d-flex justify-content-xl-start justify-content-center">
-                    <div class="blank">
-                        <p
-                            class="fw-bold text-24 lh_36 font_acumin-pro color_white mb-0 pb_6 text-xl-start text-center">
-                            How Does Dry Ice Blasting Work?</p>
-                        <p
-                            class="max_558 font_acumin-pro fw-normal text-18 lh_27 color_white opacity_90 mb-0 text-xl-start text-center">
-                            The process begins with the dry ice pellets being accelerated in a jet of compressed air,
-                            similar to sandblasting but
-                            with a crucial difference. Upon contact with the surface, the dry ice pellets undergo
-                            sublimation - they turn directly
-                            from solid to gas without becoming liquid. This reaction creates a micro-explosion on the
-                            surface, lifting dirt and
-                            contaminants away.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="blank"><img src="./assets/images/png/bottom-vector.png" alt="bottomvector"
-                class="w-100 height_440 mb_1"></div>
-    </section>
-    <!-- why-choose dry ice -->
-    <section class="mt_1 position-relative z-3 lg_pb_121 md_pb_80 pb_sm_60 pb_48" id="pricing">
-        <div class="container">
-            <h2 class="fw-bold font_titling md_lh_57 lh_43 text-48 clr-primary-black text-center mb-0">Why Choose Dry
-                Ice
-                Blasting for Your Car?</h2>
-            <div class="row mt_48  justify-content-center flex-lg-row flex-column-reverse align-items-center">
-                <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center pt-4 pt-lg-0">
-                    <div class="blank">
-                        <div class="d-flex gap_12 align-items-center pb_28">
-                            <img src="./assets/images/svg/effective-cleaning.svg" alt="effective">
-                            <div>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">Effective Cleaning
-                                </p>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">The
-                                    sublimation process effectively removes dirt, oil, and grime, even in hard-to-reach
-                                    areas.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap_12 align-items-center pb_28">
-                            <img src="./assets/images/svg/non-absasive.svg" alt="nonabrasive">
-                            <div>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">Non-Abrasive</p>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">
-                                    Unlike sandblasting or chemical cleaning, dry ice blasting won’t damage your car’s
-                                    components or paint.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap_12 align-items-center pb_28">
-                            <img src="./assets/images/svg/no-resideu.svg" alt="noresidue">
-                            <div>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">No Residue</p>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">
-                                    Since dry ice sublimates, there’s no residual waste to clean up, making it an
-                                    environmentally friendly option.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex gap_12 align-items-center">
-                            <img src="./assets/images/svg/safe-vrious.svg" alt="safevarious">
-                            <div>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">Safe for Various
-                                    Materials</p>
-                                <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">It’s
-                                    safe for use on metals, plastics, rubbers, fabrics and more, ensuring comprehensive
-                                    cleaning without damage.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center">
-                    <img src="./assets/images/png/blasting-car.png" alt="blastingcar" class="w-100 max_img558">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- behind-the scenes -->
-    <section class="bg_imagebehind" id="blog">
-        <div class="blank"><img src="/assets/images/png/top-vecror2.png" alt="topvector" class="w-100 mt_1 height_264">
-        </div>
-
-        <div class="container">
-            <div class="pb-5">
-                <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling color_white text-center mb-0">Behind the Scenes
-                    <br>
-                    Dry Ice Blasting a Car
-                </h2>
-                <p class="text-16 lh_24 font_acumin-pro text-center color_white max-w592 mx-auto pt_12 mb-0">From the
-                    initial setup to the
-                    final sweep, discover how we elevate car cleaning to an art form, delivering immaculate
-                    results every time.</p>
-            </div>
-            <div class="position-relative">
-                <img src="./assets/images/png/behind-sceneimg.png" alt="behindscense" class="w-100">
-                <div class="play_icon2 d-flex justify-content-center align-items-center">
-                    <img src="./assets/images/svg/play-iconbtn.svg" alt="playbtn" id="playButton">
-                </div>
-            </div>
-            <div class="d-flex flex-column justify-content-center align-items-center pt_40 mb-3">
-                <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb_20">Discover a cleaner, fresher, and more
-                    beautiful car, inside and out, with our advanced dry ice
-                    blasting services.</p>
-                <button
-                    class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
-                    Instant Quote</button>
-            </div>
-        </div>
-        <div class="blank"><img src="./assets/images/png/bottom-vector2.png" alt="bottomvector"
-                class="w-100 height_440 mb_1"></div>
-    </section>
-    <!-- Let's Talk Numbers accordion1 -->
-    <section>
-        <div class="container">
-            <div class="mb-5">
-                <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black text-center">Let's Talk Numbers
-                </h2>
-                <p
-                    class="font_acumin-pro fw-normal text-16 lh_24 opacity_70 clr-primary-black text-center max-w789 mx-auto mb-0">
-                    We're all about transparency, but we also know that each car tells a different story. The cost can
-                    vary based on how
-                    much grime we're up against. More dirt might mean more ice and more time to get that perfect finish.
-                    But don't sweat it
-                    – we'll always give you a straight price, customised to your car's needs.</p>
-            </div>
-            <div class="accordianbox2">
-                <div class="accordian2 active box-bg1">
-                    <div class="accordionbtn2 d-flex justify-content-between">
-                        <h4 class="text-28 lh_39 fw-bold font_acumin-pro mb-0 max_w357">Engine Bay Perfection from £375
-                        </h4>
-                        <p
-                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
-                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                            away oil, grease, and grime
-                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                            wire, and component is treated
-                            with the respect it deserves.</p>
-                        <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
-                        <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
-                    </div>
-                    <p
-                        class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
-                        Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                        away oil, grease, and grime
-                        without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                        wire, and component is treated
-                        with the respect it deserves.</p>
-                </div>
-                <div class="accordian2 box-bg2">
-                    <div class="accordionbtn2 d-flex justify-content-between align-items-center">
-                        <h4 class="text-28 lh_39 fw-bold font_acumin-pro mb-0">Underbelly Deep-Clean from £750</h4>
-                        <p
-                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
-                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                            away oil, grease, and grime
-                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                            wire, and component is treated
-                            with the respect it deserves.</p>
-                        <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
-                        <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
-                    </div>
-                    <p
-                        class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
-                        Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                        away oil, grease, and grime
-                        without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                        wire, and component is treated
-                        with the respect it deserves.</p>
-                </div>
-                <div class="accordian2 box-bg3">
-                    <div class="accordionbtn2 d-flex justify-content-between align-items-center">
-                        <h4 class="text-28 lh_39 fw-bold font_acumin-pro mb-0">Ultimate Undercarriage & Engine Bay
-                            Overhaul from £1,125</h4>
-                        <p
-                            class="text-16 lh_25 fw-normal font_acumin-pro max_w242 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
-                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                        </p>
-                        <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
-                        <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
-                    </div>
-                    <p
-                        class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
-                        Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                        away oil, grease, and grime
-                        without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                        wire, and component is treated
-                        with the respect it deserves.</p>
-                </div>
-                <div class="accordian2 box-bg4">
-                    <div class="accordionbtn2 d-flex justify-content-between align-items-center">
-                        <h4 class="text-28 lh_39 fw-bold font_acumin-pro mb-0">Need Something Else?</h4>
-                        <p
-                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
-                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                            away oil, grease, and grime
-                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                            wire, and component is treated
-                            with the respect it deserves.</p>
-                        <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
-                        <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
-                    </div>
-                    <p
-                        class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
-                        Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
-                        away oil, grease, and grime
-                        without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
-                        wire, and component is treated
-                        with the respect it deserves.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- quote-today-->
-    <section class="py_40">
-        <div class="container">
-            <div class="quote-box mx-auto">
-                <h3 class="font_titling fw-bold text-32 sm_lh_44 lh_34 clr-primary-black text-center">Get an Instant
-                    Quote Today</h3>
-                <p
-                    class="fw-normal text-16 lh_24 font_acumin-pro clr-primary-black opacity_80 max_w770 text-center mx-auto mb-0">
-                    Regular dry ice cleaning prevents costly rust and wear. Avoid potentially thousands of pounds worth
-                    of bodywork repairs
-                    when just for a fraction of that you can keep your car in prime condition all year round! What are
-                    you waiting for?</p>
-                <div class="d-flex justify-content-center mt_40">
-                    <button
-                        class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
+                        class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center mb-2">Get
                         Instant Quote</button>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- slider-section -->
-    <section class="bg-color1 position-relative z-2 mt_1">
-        <div class="mt_1 mx-auto height_264"><img src="./assets/images/png/top-ector.png" alt="topvector"
-                class="w-100 h-100 mt_1"></div>
-        <div class="container">
+        </section>
+        <!-- dry-icing blasting -->
+        <section class="bg-color1 position-relative z-3 mt_1" id="services">
+            <div class="mt_1 mx-auto height_264"><img src="./assets/images/webp/top-ector.webp" alt="topvector"
+                    class="w-100 h-100 mt_1"></div>
+            <div class="container">
+                <h2 class="font_titling fw-bold text-48 md_lh_57 lh_43 color_white text-center">Understanding Dry Ice
+                    Blasting</h2>
+                <div class="row py_118 pb_40 d-flex flex-xl-row flex-column-reverse align-items-center justify-content-center">
+                    <div class="col-xl-6 col-12 d-flex justify-content-center">
+                        <div class="blank">
+                            <p class="fw-bold text-24 lh_36 font_acumin-pro color_white mb-0 pb_6 text-xl-start text-center">
+                                What is Dry Ice Blasting?</p>
+                            <p
+                                class="max_558 font_acumin-pro fw-normal text-18 lh_27 color_white opacity_90 mb-0 text-xl-start text-center">
+                                Dry ice blasting is an innovative
+                                cleaning technology that uses solid CO2 (carbon dioxide) pellets. These pellets are
+                                propelled at high speeds to clean surfaces. Unlike traditional cleaning methods, this
+                                process does not involve water
+                                or
+                                abrasive materials, making it incredibly safe and effective for delicate areas like engine
+                                bays, undercarriages, and
+                                even car interiors.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-12 d-flex justify-content-end pb-5 pb-xl-0">
+                        <img src="./assets/images/webp/dry-iceblast.webp" alt="dryice" class="w-100 max-wimg2 img-absolute1">
+                    </div>
+                </div>
+                <div class="row py_153 pb_40 d-flex align-content-center">
+                    <div class="col-xl-6 col-12 d-flex justify-content-start pb-5 pb-xl-0">
+                        <img src="./assets/images/webp/dry-iceblast2.webp" alt="dryblast" class="w-100 max-wimg3 img-absolute2">
+                    </div>
+                    <div class="col-xl-6 col-12 d-flex justify-content-xl-start justify-content-center">
+                        <div class="blank">
+                            <p class="fw-bold text-24 lh_36 font_acumin-pro color_white mb-0 pb_6 text-xl-start text-center">
+                                How Does Dry Ice Blasting Work?</p>
+                            <p
+                                class="max_558 font_acumin-pro fw-normal text-18 lh_27 color_white opacity_90 mb-0 text-xl-start text-center">
+                                The process begins with the dry ice pellets being accelerated in a jet of compressed air,
+                                similar to sandblasting but
+                                with a crucial difference. Upon contact with the surface, the dry ice pellets undergo
+                                sublimation - they turn directly
+                                from solid to gas without becoming liquid. This reaction creates a micro-explosion on the
+                                surface, lifting dirt and
+                                contaminants away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blank"><img src="./assets/images/webp/bottom-vector.webp" alt="bottomvector"
+                    class="w-100 height_440 mb_1"></div>
+        </section>
+        <!-- why-choose dry ice -->
+        <section class="mt_1 position-relative z-3 lg_pb_121 md_pb_80 pb_sm_60 pb_48 mb_1" id="pricing">
+            <div class="container">
+                <h2 class="fw-bold font_titling md_lh_57 lh_43 text-48 clr-primary-black text-center mb-0">Why Choose Dry
+                    Ice
+                    Blasting for Your Car?</h2>
+                <div class="row mt_48  justify-content-center flex-lg-row flex-column-reverse align-items-center">
+                    <div data-aos="fade-right"
+                        class="col-lg-6 col-12 d-flex align-items-center justify-content-center pt-4 pt-lg-0">
+                        <div class="blank">
+                            <div class="d-flex gap_12 align-items-sm-center align-items-start pb_28">
+                                <img src="./assets/images/svg/effective-cleaning.svg" alt="effective">
+                                <div>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">Effective Cleaning
+                                    </p>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">The
+                                        sublimation process effectively removes dirt, oil, and grime, even in hard-to-reach
+                                        areas.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap_12 align-items-sm-center align-items-start pb_28">
+                                <img src="./assets/images/svg/non-absasive.svg" alt="nonabrasive">
+                                <div>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">Non-Abrasive</p>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">
+                                        Unlike sandblasting or chemical cleaning, dry ice blasting won’t damage your car’s
+                                        components or paint.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap_12 align-items-sm-center align-items-start pb_28">
+                                <img src="./assets/images/svg/no-resideu.svg" alt="noresidue">
+                                <div>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">No Residue</p>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">
+                                        Since dry ice sublimates, there’s no residual waste to clean up, making it an
+                                        environmentally friendly option.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap_12 align-items-sm-center align-items-start">
+                                <img src="./assets/images/svg/safe-vrious.svg" alt="safevarious">
+                                <div>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black mb-0 pb_4">Safe for Various
+                                        Materials</p>
+                                    <p class="font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 max_w451 mb-0">It’s
+                                        safe for use on metals, plastics, rubbers, fabrics and more, ensuring comprehensive
+                                        cleaning without damage.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-aos="fade-left" class="col-lg-6 col-12 d-flex justify-content-lg-start justify-content-center">
+                        <img src="./assets/images/webp/blasting-car.webp" alt="blastingcar" class="w-100 max_img558">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- behind-the scenes -->
+        <section class="bg_imagebehind" id="blog">
+            <div class="blank"><img src="/assets/images/webp/top-vecror2.webp" alt="topvector" class="w-100 mt_2 height_264">
+            </div>
+            <div class="container">
+                <div data-aos="zoom-in-up">
+                    <div class="pb-5">
+                        <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling color_white text-center mb-0">Behind the
+                            Scenes
+                            <br>
+                            Dry Ice Blasting a Car
+                        </h2>
+                        <p class="text-16 lh_24 font_acumin-pro text-center color_white max-w592 mx-auto pt_12 mb-0">From
+                            the
+                            initial setup to the
+                            final sweep, discover how we elevate car cleaning to an art form, delivering immaculate
+                            results every time.</p>
+                    </div>
+                    <div class="position-relative">
+                        <a target="_blank" href="https://youtu.be/EM_FKck0DTo?feature=shared"><img
+                                src="./assets/images/webp/behind-sceneimg.webp" alt="behindscense" class="w-100"></a>
+                        <div class="play_icon2 d-flex justify-content-center align-items-center">
+                            <img src="./assets/images/svg/play-iconbtn.svg" alt="playbtn" class="w_30" id="playButton">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center pt_40 mb-3">
+                        <p class="font_acumin-pro fw-bold text-16 lh_24 color_white mb_20">Discover a cleaner, fresher, and
+                            more
+                            beautiful car, inside and out, with our advanced dry ice
+                            blasting services.</p>
+                        <button
+                            class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
+                            Instant Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="blank"><img src="./assets/images/webp/bottom-vector2.webp" alt="bottomvector"
+                    class="w-100 height_440 mb_1"></div>
+        </section>
+        <!-- Let's Talk Numbers accordion1 -->
+        <section>
+            <div class="container">
+                <div class="mb-5">
+                    <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black text-center">Let's Talk Numbers
+                    </h2>
+                    <p
+                        class="font_acumin-pro fw-normal text-16 lh_24 opacity_70 clr-primary-black text-center max-w789 mx-auto mb-0">
+                        We're all about transparency, but we also know that each car tells a different story. The cost can
+                        vary based on how
+                        much grime we're up against. More dirt might mean more ice and more time to get that perfect finish.
+                        But don't sweat it
+                        – we'll always give you a straight price, customised to your car's needs.</p>
+                </div>
+                <div data-aos="zoom-out" class="accordianbox2">
+                    <div class="accordian2 active box-bg1">
+                        <div class="accordionbtn2 d-flex justify-content-between">
+                            <h4 class="text-28 lh_39 lh_24 fw-bold font_acumin-pro mb-0 max_w357">Engine Bay Perfection from
+                                £375
+                            </h4>
+                            <p
+                                class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
+                                Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                                away oil, grease, and grime
+                                without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                                wire, and component is treated
+                                with the respect it deserves.</p>
+                            <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
+                            <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
+                        </div>
+                        <p
+                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
+                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                            away oil, grease, and grime
+                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                            wire, and component is treated
+                            with the respect it deserves.</p>
+                    </div>
+                    <div class="accordian2 box-bg2">
+                        <div class="accordionbtn2 d-flex justify-content-between align-items-center">
+                            <h4 class="text-28 lh_39 lh_24 fw-bold font_acumin-pro mb-0">Underbelly Deep-Clean from £750
+                            </h4>
+                            <p
+                                class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
+                                Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                                away oil, grease, and grime
+                                without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                                wire, and component is treated
+                                with the respect it deserves.</p>
+                            <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
+                            <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
+                        </div>
+                        <p
+                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
+                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                            away oil, grease, and grime
+                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                            wire, and component is treated
+                            with the respect it deserves.</p>
+                    </div>
+                    <div class="accordian2 box-bg3">
+                        <div class="accordionbtn2 d-flex justify-content-between align-items-center">
+                            <h4 class="text-28 lh_39 lh_24 fw-bold font_acumin-pro mb-0">Ultimate Undercarriage & Engine Bay
+                                Overhaul from £1,125</h4>
+                            <p
+                                class="text-16 lh_25 fw-normal font_acumin-pro max_w242 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
+                                Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                            </p>
+                            <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
+                            <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
+                        </div>
+                        <p
+                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
+                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                            away oil, grease, and grime
+                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                            wire, and component is treated
+                            with the respect it deserves.</p>
+                    </div>
+                    <div class="accordian2 box-bg4">
+                        <div class="accordionbtn2 d-flex justify-content-between align-items-center">
+                            <h4 class="text-28 lh_39 lh_24 fw-bold font_acumin-pro mb-0">Need Something Else?</h4>
+                            <p
+                                class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-block d-none">
+                                Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                                away oil, grease, and grime
+                                without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                                wire, and component is treated
+                                with the respect it deserves.</p>
+                            <img src="./assets/images/svg/acoordion-vector.svg" alt="subtract" class="vector-subtract">
+                            <img src="./assets/images/svg/accordion-plusicon.svg" alt="plusicon" class="plus-vector">
+                        </div>
+                        <p
+                            class="text-16 lh_25 fw-normal font_acumin-pro max_w551 mb-0 clr-primary-black opacity_70 para d-lg-none d-block pt-2">
+                            Crank up the cool factor under your hood with engine bay ice blasting. We delicately lift
+                            away oil, grease, and grime
+                            without water or chemicals. It's the ultimate detox for your engine, ensuring every hose,
+                            wire, and component is treated
+                            with the respect it deserves.</p>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+        <!-- quote-today-->
+        <section class="py_40 position-relative z-3 mb-1">
+            <div class="container">
+                <div data-aos="zoom-in" class="quote-box mx-auto">
+                    <h3 class="font_titling fw-bold text-32 sm_lh_44 lh_34 clr-primary-black text-center">Get an Instant
+                        Quote Today</h3>
+                    <p
+                        class="fw-normal text-16 lh_24 font_acumin-pro clr-primary-black opacity_80 max_w770 text-center mx-auto mb-0">
+                        Regular dry ice cleaning prevents costly rust and wear. Avoid potentially thousands of pounds worth
+                        of bodywork repairs
+                        when just for a fraction of that you can keep your car in prime condition all year round! What are
+                        you waiting for?</p>
+                    <div class="d-flex justify-content-center mt_40">
+                        <button
+                            class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
+                            Instant Quote</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- slider-section -->
+        <section class="bg-color1 position-relative z-2 mt_1 carousel-section overflow-hidden mb_1">
+            <div class="mt_1 mx-auto height_264"><img src="./assets/images/webp/top-ector.webp" alt="topvector"
+                    class="w-100 h-100 mt_1"></div>
             <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling color_white mb-0 pb_10 text-center">See Our Latest
                 Work</h2>
-            <div class="responsive center-slider mt_57">
-                <div class="max_wimg509 height_434">
-                    <img src="./assets/images/png/slider1img.png" alt="slider1" class="w-100 h-100 border_img">
-                </div>
-                <div class="max_wimg509 height_434">
-                    <img src="./assets/images/png/slider2img.png" alt="slider2" class="w-100 h-100 border_img">
-                </div>
-                <div class="max_wimg509 height_434">
-                    <img src="./assets/images/png/slider3img.png" alt="slider3" class="w-100 h-100 border_img">
-                </div>
-                <div class="max_wimg509 height_434">
-                    <img src="./assets/images/png/slider4img.png" alt="slider4" class="w-100 h-100 border_img">
-                </div>
-                <div class="max_wimg509 height_434">
-                    <img src="./assets/images/png/slider5img.png" alt="slider5" class="w-100 h-100 border_img">
+            <div data-aos="zoom-in-down" class="container position-relative">
+                <div class="carousel mt_57">
+                    <div class="swiper swiper-carousel">
+                        <div class="swiper-wrapper pb-5">
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider1img.webp" alt="slider1" class="w-100">
+                            </div>
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider2img (1).webp" alt="slider2" class="w-100">
+                            </div>
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider3img (1).webp" alt="slider3" class="w-100">
+                            </div>
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider4img (1).webp" alt="slider4" class="w-100">
+                            </div>
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider5img.webp" alt="slider5" class="w-100">
+                            </div>
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider4img.webp" alt="slider4" class="w-100">
+                            </div>
+                            <div class="swiper-slide carousel-slide max_wimg509 height_434">
+                                <img src="./assets/images/webp/slider5img.webp" alt="slider5" class="w-100">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <button class="prev_button prev d-flex justify-content-center align-items-center"><svg width="11"
+            <div class="d-lg-block d-none">
+                <button class="prev_button prev d-flex justify-content-center align-items-center" id="prevBtn"><svg width="11"
                         height="19" viewBox="0 0 11 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M10.5115 1.36712C10.6663 1.51626 10.7892 1.69341 10.873 1.88842C10.9569 2.08344 11 2.2925 11 2.50363C11 2.71476 10.9569 2.92381 10.873 3.11883C10.7892 3.31385 10.6663 3.491 10.5115 3.64014L4.02997 9.89496L10.5115 16.1498C10.8238 16.4512 10.9993 16.86 10.9993 17.2863C10.9993 17.7126 10.8238 18.1214 10.5115 18.4228C10.1991 18.7242 9.7755 18.8936 9.33378 18.8936C8.89206 18.8936 8.46843 18.7242 8.15608 18.4228L0.488524 11.0234C0.333664 10.8743 0.210803 10.6971 0.126975 10.5021C0.043148 10.3071 0 10.098 0 9.8869C0 9.67577 0.043148 9.46671 0.126975 9.27169C0.210803 9.07668 0.333664 8.89953 0.488524 8.75039L8.15608 1.351C8.79087 0.738413 9.85998 0.738413 10.5115 1.36712Z"
                             fill="#FA6A00" />
                     </svg></button>
-                <button class="next next_button d-flex justify-content-center align-items-center"><svg width="12"
+                <button class="next next_button d-flex justify-content-center align-items-center" id="nextBtn"><svg width="12"
                         height="19" viewBox="0 0 12 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M0.988526 1.36712C0.833665 1.51626 0.710805 1.69341 0.626977 1.88842C0.543149 2.08344 0.5 2.2925 0.5 2.50363C0.5 2.71476 0.543149 2.92381 0.626977 3.11883C0.710805 3.31385 0.833665 3.491 0.988526 3.64014L7.47003 9.89496L0.988526 16.1498C0.676181 16.4512 0.500707 16.86 0.500707 17.2863C0.500707 17.7126 0.676181 18.1214 0.988526 18.4228C1.30087 18.7242 1.7245 18.8936 2.16622 18.8936C2.60794 18.8936 3.03157 18.7242 3.34392 18.4228L11.0115 11.0234C11.1663 10.8743 11.2892 10.6971 11.373 10.5021C11.4569 10.3071 11.5 10.098 11.5 9.8869C11.5 9.67577 11.4569 9.46671 11.373 9.27169C11.2892 9.07668 11.1663 8.89953 11.0115 8.75039L3.34392 1.351C2.70913 0.738413 1.64002 0.738413 0.988526 1.36712Z"
@@ -563,574 +587,569 @@
                     </svg>
                 </button>
             </div>
-
-
-        </div>
-        <div class="blank"><img src="./assets/images/png/bottom-vector.png" alt="bottomvector"
-                class="w-100 height_440 mb_1">
-        </div>
-    </section>
-    <!-- meet-the team -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-12 d-flex justify-content-center">
-                    <div class="position-relative d-xxl-block d-none">
-                        <img src="./assets/images/png/meet_teamimage.png" alt="meetteam"
-                            class="w-100 max_wimg461 position-relative z-3">
-                        <div class="absolute_ellips1">
-                            <img src="./assets/images/png/meet_teamellips.png" alt="meetellips"
-                                class="w-100 max_wimg577">
+            <div class="w-100"><img src="./assets/images/webp/bottom-vector2.webp" alt="bottomvector"
+                    class="w-100 height_440 mb_1">
+            </div>
+        </section>
+        <!-- meet-the team -->
+        <section class="py-sm-5 py-3 position-relative">
+            <div class="container position-relative z-3">
+                <div class="row">
+                    <div data-aos="fade-right" class="col-lg-6 col-12 d-flex justify-content-center">
+                        <div class="position-relative d-xxl-block d-none">
+                            <img src="./assets/images/png/meet_teamimage.png" alt="meetteam"
+                                class="w-100 max_wimg461 position-relative z-3">
+                            <div class="absolute_ellips1">
+                                <img src="./assets/images/webp/meet_teamellips.webp" alt="meetellips" class="w-100 max_wimg577">
+                            </div>
+                        </div>
+                        <div class="d-xxl-none d-block">
+                            <img src="./assets/images/png/meet_teamimg.png" alt="meetteamimg"
+                                class="w-100 max_img631 md_maxw460 max_imgw300">
                         </div>
                     </div>
-                    <div class="d-xxl-none d-block">
-                        <img src="./assets/images/png/meet_teamimg.png" alt="meetteamimg"
-                            class="w-100 max_img631 md_maxw460 max_imgw300">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
-                    <div class="blank">
-                        <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10">Meet The
-                            Team</h2>
-                        <p class="text-18 lh_21 font_acumin-pro fw-bold clr-primary-black">Oxfordshire's Dry Ice Car
-                            Cleaning Specialists</p>
-                        <p class="font_acumin-pro lh_24 text-16 clr-primary-black opacity_70 max_w631 mb-0">We’re
-                            shaking up the car cleaning scene
-                            with Dry Ice Blasting. From our buzzing unit in Oxfordshire, we're not just a
-                            team - we’re a Crew of car enthusiasts, expert restorers, and skilled mechanics united by
-                            our love for cars. We
-                            treat
-                            every car like it’s our own, driven by a philosophy that doing the right thing for your ride
-                            is the only way to go.
-                            When
-                            you hand over your keys to us, you're entrusting your pride and joy to fellow car lovers who
-                            understand that every
-                            car
-                            deserves precision care and a touch of cool.</p>
+                    <div data-aos="fade-left" class="col-lg-6 col-12 d-flex align-items-center justify-content-center">
+                        <div class="blank">
+                            <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10">Meet The
+                                Team</h2>
+                            <p class="text-18 lh_21 font_acumin-pro fw-bold clr-primary-black">Oxfordshire's Dry Ice Car
+                                Cleaning Specialists</p>
+                            <p class="font_acumin-pro lh_24 text-16 clr-primary-black opacity_70 max_w631 mb-0">We’re
+                                shaking up the car cleaning scene
+                                with Dry Ice Blasting. From our buzzing unit in Oxfordshire, we're not just a
+                                team - we’re a Crew of car enthusiasts, expert restorers, and skilled mechanics united by
+                                our love for cars. We
+                                treat
+                                every car like it’s our own, driven by a philosophy that doing the right thing for your ride
+                                is the only way to go.
+                                When
+                                you hand over your keys to us, you're entrusting your pride and joy to fellow car lovers who
+                                understand that every
+                                car
+                                deserves precision care and a touch of cool.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="blank">
-            <img src="./assets/images/png/meet_footervector.png" alt="meetvector"
+            <div class="blank">
+                <img src="./assets/images/png/meet_footervector.png" alt="meetvector"
+                    class="w-100 lg_height_383 md_height_260 height_110">
+            </div>
+        </section>
+        <!-- Still Unsure? Check Out These FAQs acoordion2 -->
+        <section class="py_45_65" id="faq">
+            <div class="container">
+                <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10 text-center">Still
+                    Unsure? Check Out These FAQs</h2>
+                <div data-aos="fade-up" data-aos-duration="1200" class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button
+                                class="accordion-button d-flex align-items-center font_acumin-pro text-24 lh_33 lh_27 fw-bold"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                What types of vehicles are best suited for dry ice blasting?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive components, railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                How often should I use dry ice blasting for optimal vehicle maintenance?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                                aria-controls="collapseThree">
+                                Can dry ice blasting be used on vehicle interiors?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingfour">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false"
+                                aria-controls="collapsefour">
+                                What makes dry ice blasting more effective than pressure washing or sandblasting?
+                            </button>
+                        </h2>
+                        <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive
+                                components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and
+                                historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for
+                                diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingfive">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false"
+                                aria-controls="collapsefive">
+                                Is there any preparation required on my part before a dry ice blasting session?
+                            </button>
+                        </h2>
+                        <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive
+                                components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and
+                                historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for
+                                diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingsix">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false"
+                                aria-controls="collapsesix">
+                                How long does a typical dry ice blasting session take?
+                            </button>
+                        </h2>
+                        <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive
+                                components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and
+                                historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for
+                                diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingseven">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false"
+                                aria-controls="collapseseven">
+                                Can dry ice blasting improve my vehicle’s resale value?
+                            </button>
+                        </h2>
+                        <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive
+                                components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and
+                                historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for
+                                diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingeight">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseeight" aria-expanded="false"
+                                aria-controls="collapseeight">
+                                Will dry ice blasting remove existing wax or sealant from my car’s paint?
+                            </button>
+                        </h2>
+                        <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive
+                                components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and
+                                historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for
+                                diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingnine">
+                            <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 lh_27 fw-bold" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapsenine" aria-expanded="false"
+                                aria-controls="collapsenine">
+                                Are there any special care instructions to follow after a dry ice blasting session?
+                            </button>
+                        </h2>
+                        <div id="collapsenine" class="accordion-collapse collapse" aria-labelledby="headingnine"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
+                                Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
+                                automotive
+                                components,
+                                railway
+                                equipment, marine vessels, industrial machinery, food processing equipment, electrical
+                                components, and
+                                historic
+                                structures. The method is versatile, non-abrasive, and environmentally friendly, making it
+                                suitable for
+                                diverse
+                                applications across various industries.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="1200" class="text_areabox">
+                    <p class="text-24 lh_33 lh_27 fw-bold font_acumin-pro clr-primary-black mb-0">Have a Different Question?
+                        Contact Us
+                        Today</p>
+                    <label for="Type something..."></label>
+                    <textarea name="massage" name="Message" id="Type something" autocomplete="Type something"
+                        placeholder="Type something..." cols="40" rows="5"
+                        class="forms font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 w-100 resize noscroolbar"></textarea>
+                    <button
+                        class="fw-bold font_acumin-pro text-16 lh_19 color_white more-btn d-flex align-items-center justify-content-center ms-2 mt_40">Subscribe</button>
+                </div>
+            </div>
+        </section>
+        <!-- Blast The Grime and Bring Back The Prime -->
+        <section>
+            <img src="./assets/images/png/backprime_topvector.png" alt="primetopvector" class="w-100 height_440">
+            <div class="container">
+                <div data-aos="zoom-out"
+                    class="d-flex justify-content-center flex-column align-items-center position-relative z-3">
+                    <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10 text-center">Blast
+                        The Grime and
+                        Bring Back The Prime</h2>
+                    <p class="text-16 fw-normal lh_24 font_acumin-pro text-center clr-primary-black opacity_70 max_w966">
+                        Rest easy knowing that our approach is tailored to protect and enhance your vehicle. We don’t clean;
+                        we care. Every
+                        treatment is a promise that your vehicle will not only look its best but also receive the care it
+                        needs for a longer,
+                        healthier life on the road.</p>
+                    <p class="fw-bold lh_19 text-16 font_acumin-pro clr-primary-black mb-0">Ready For a Transformation? Get
+                        an
+                        Instant Quote</p>
+                    <div class="d-flex justify-content-center mt_40">
+                        <button
+                            class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
+                            Instant Quote</button>
+                    </div>
+                </div>
+            </div>
+            <img src="./assets/images/png/bakprime_bottom.png" alt="primebottom"
                 class="w-100 lg_height_383 md_height_260 height_110">
-        </div>
-    </section>
-    <!-- Still Unsure? Check Out These FAQs acoordion2 -->
-    <section class="py_45_65" id="faq">
-        <div class="container">
-            <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10 text-center">Still
-                Unsure? Check Out These FAQs</h2>
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button d-flex align-items-center font_acumin-pro text-24 lh_33 fw-bold"
-                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            What types of vehicles are best suited for dry ice blasting?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive components, railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for diverse
-                            applications across various industries.
+        </section>
+        <!-- Latest News & Insights -->
+        <section class="lg_py_50_80 py_48">
+            <div class="container">
+                <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10 text-center">Latest News
+                    & Insights</h2>
+                <p class="text-16 lh_24 fw-normal clr-primary-black opacity_70 font_acumin-pro text-center">Uncover the
+                    latest insights and innovation in car care.</p>
+                <div data-aos="zoom-in-down" class="row lg_pt_50 d-flex justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center">
+                        <div class="latest_box">
+                            <img src="./assets/images/png/january1st.png" alt="january1" class="w-100">
+                            <div class="january_box">
+                                <p class="font_acumin-pro fw-semibold text-16 lh_24 clr-primary-black opacity_80 mb-0 pb_10">
+                                    January 1st, 2024</p>
+                                <p class="font_acumin-pro fw-bold text-16 lh_24 clr-primary-black max_w300 mb-0">What is Dry
+                                    Ice Blasting? An In-Depth Guide tp Revolutionary Car Cleaning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center pt-4 pt-md-0">
+                        <div class="latest_box">
+                            <img src="./assets/images/png/january2nd.png" alt="january2" class="w-100">
+                            <div class="january_box">
+                                <p class="font_acumin-pro fw-semibold text-16 lh_24 clr-primary-black opacity_80 mb-0 pb_10">
+                                    January 1st, 2024</p>
+                                <p class="font_acumin-pro fw-bold text-16 lh_24 clr-primary-black max_w300 mb-0">What is Dry
+                                    Ice Blasting? An
+                                    In-Depth Guide tp Revolutionary Car Cleaning</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center pt-4 pt-lg-0">
+                        <div class="latest_box">
+                            <img src="./assets/images/png/jamuary3rd.png" alt="january3" class="w-100">
+                            <div class="january_box">
+                                <p class="font_acumin-pro fw-semibold text-16 lh_24 clr-primary-black opacity_80 mb-0 pb_10">
+                                    January 1st, 2024</p>
+                                <p class="font_acumin-pro fw-bold text-16 lh_24 clr-primary-black max_w300 mb-0">What is Dry
+                                    Ice Blasting? An
+                                    In-Depth Guide tp Revolutionary Car Cleaning</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
-                            How often should I use dry ice blasting for optimal vehicle maintenance?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                            aria-controls="collapseThree">
-                            Can dry ice blasting be used on vehicle interiors?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingfour">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false"
-                            aria-controls="collapsefour">
-                            What makes dry ice blasting more effective than pressure washing or sandblasting?
-                        </button>
-                    </h2>
-                    <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive
-                            components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and
-                            historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for
-                            diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingfive">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false"
-                            aria-controls="collapsefive">
-                            Is there any preparation required on my part before a dry ice blasting session?
-                        </button>
-                    </h2>
-                    <div id="collapsefive" class="accordion-collapse collapse" aria-labelledby="headingfive"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive
-                            components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and
-                            historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for
-                            diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingsix">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false"
-                            aria-controls="collapsesix">
-                            How long does a typical dry ice blasting session take?
-                        </button>
-                    </h2>
-                    <div id="collapsesix" class="accordion-collapse collapse" aria-labelledby="headingsix"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive
-                            components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and
-                            historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for
-                            diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingseven">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="false"
-                            aria-controls="collapseseven">
-                            Can dry ice blasting improve my vehicle’s resale value?
-                        </button>
-                    </h2>
-                    <div id="collapseseven" class="accordion-collapse collapse" aria-labelledby="headingseven"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive
-                            components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and
-                            historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for
-                            diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingeight">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseeight" aria-expanded="false"
-                            aria-controls="collapseeight">
-                            Will dry ice blasting remove existing wax or sealant from my car’s paint?
-                        </button>
-                    </h2>
-                    <div id="collapseeight" class="accordion-collapse collapse" aria-labelledby="headingeight"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive
-                            components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and
-                            historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for
-                            diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingnine">
-                        <button class="accordion-button collapsed font_acumin-pro text-24 lh_33 fw-bold" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapsenine" aria-expanded="false"
-                            aria-controls="collapsenine">
-                            Are there any special care instructions to follow after a dry ice blasting session?
-                        </button>
-                    </h2>
-                    <div id="collapsenine" class="accordion-collapse collapse" aria-labelledby="headingnine"
-                        data-bs-parent="#accordionExample">
-                        <div class="accordion-body fw-normal font_acumin-pro text-16 lh_24 color_white opacity_80">
-                            Dry ice blasting is effective for cleaning a wide range of surfaces, including aircraft,
-                            automotive
-                            components,
-                            railway
-                            equipment, marine vessels, industrial machinery, food processing equipment, electrical
-                            components, and
-                            historic
-                            structures. The method is versatile, non-abrasive, and environmentally friendly, making it
-                            suitable for
-                            diverse
-                            applications across various industries.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="text_areabox">
-                <p class="text-24 lh_33 fw-bold font_acumin-pro clr-primary-black">Have a Different Question? Contact Us
-                    Today</p>
-                <label for="Type something..."></label>
-                <textarea name="massage" name="Message" id="Type something" autocomplete="Type something"
-                    placeholder="Type something..." cols="40" rows="5"
-                    class="forms font_acumin-pro text-16 lh_24 clr-primary-black opacity_70 w-100 resize noscroolbar"></textarea>
-                <button
-                    class="fw-bold font_acumin-pro text-16 lh_19 color_white more-btn d-flex align-items-center justify-content-center ms-2 mt_40">Subscribe</button>
-            </div>
-        </div>
-    </section>
-    <!-- Blast The Grime and Bring Back The Prime -->
-    <section>
-        <img src="./assets/images/png/backprime_topvector.png" alt="primetopvector" class="w-100 height_440">
-        <div class="container">
-            <div class="d-flex justify-content-center flex-column align-items-center position-relative z-3">
-                <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10 text-center">Blast
-                    The Grime and
-                    Bring Back The Prime</h2>
-                <p class="text-16 fw-normal lh_24 font_acumin-pro text-center clr-primary-black opacity_70 max_w966">
-                    Rest easy knowing that our approach is tailored to protect and enhance your vehicle. We don’t clean;
-                    we care. Every
-                    treatment is a promise that your vehicle will not only look its best but also receive the care it
-                    needs for a longer,
-                    healthier life on the road.</p>
-                <p class="fw-bold lh_19 text-16 font_acumin-pro clr-primary-black mb-0">Ready For a Transformation? Get
-                    an
-                    Instant Quote</p>
                 <div class="d-flex justify-content-center mt_40">
                     <button
-                        class="fw-bold font_acumin-pro text-16 lh_19 color_white common-btn d-flex align-items-center justify-content-center">Get
-                        Instant Quote</button>
+                        class="fw-bold font_acumin-pro text-16 lh_19 color_white more-btn d-flex align-items-center justify-content-center">More
+                        Blogs</button>
                 </div>
             </div>
-        </div>
-        <img src="./assets/images/png/bakprime_bottom.png" alt="primebottom"
-            class="w-100 lg_height_383 md_height_260 height_110">
-    </section>
-    <!-- Latest News & Insights -->
-    <section class="lg_py_50_80 py_48">
-        <div class="container">
-            <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling clr-primary-black mb-0 pb_10 text-center">Latest News
-                & Insights</h2>
-            <p class="text-16 lh_24 fw-normal clr-primary-black opacity_70 font_acumin-pro text-center">Uncover the
-                latest insights and innovation in car care.</p>
-            <div class="row lg_pt_50 d-flex justify-content-center">
-                <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center">
-                    <div class="latest_box">
-                        <img src="./assets/images/png/january1st.png" alt="january1" class="w-100">
-                        <div class="january_box">
-                            <p
-                                class="font_acumin-pro fw-semibold text-16 lh_24 clr-primary-black opacity_80 mb-0 pb_10">
-                                January 1st, 2024</p>
-                            <p class="font_acumin-pro fw-bold text-16 lh_24 clr-primary-black max_w300 mb-0">What is Dry
-                                Ice Blasting? An In-Depth Guide tp Revolutionary Car Cleaning</p>
+        </section>
+        <!-- Join Our Mailing List -->
+        <section class="pt_58" id="contact">
+            <div class="mb_100">
+                <div class="container">
+                    <div data-aos="zoom-out" class="mail_box d-flex justify-content-center mx-auto position-relative">
+                        <div class="mail_absolute">
+                            <img src="./assets/images/png//mail-img.png" alt="mail_svg" class="max_wimg81">
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center pt-4 pt-md-0">
-                    <div class="latest_box">
-                        <img src="./assets/images/png/january2nd.png" alt="january2" class="w-100">
-                        <div class="january_box">
-                            <p
-                                class="font_acumin-pro fw-semibold text-16 lh_24 clr-primary-black opacity_80 mb-0 pb_10">
-                                January 1st, 2024</p>
-                            <p class="font_acumin-pro fw-bold text-16 lh_24 clr-primary-black max_w300 mb-0">What is Dry
-                                Ice Blasting? An
-                                In-Depth Guide tp Revolutionary Car Cleaning</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 d-flex justify-content-center pt-4 pt-lg-0">
-                    <div class="latest_box">
-                        <img src="./assets/images/png/jamuary3rd.png" alt="january3" class="w-100">
-                        <div class="january_box">
-                            <p
-                                class="font_acumin-pro fw-semibold text-16 lh_24 clr-primary-black opacity_80 mb-0 pb_10">
-                                January 1st, 2024</p>
-                            <p class="font_acumin-pro fw-bold text-16 lh_24 clr-primary-black max_w300 mb-0">What is Dry
-                                Ice Blasting? An
-                                In-Depth Guide tp Revolutionary Car Cleaning</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center mt_40">
-                <button
-                    class="fw-bold font_acumin-pro text-16 lh_19 color_white more-btn d-flex align-items-center justify-content-center">More
-                    Blogs</button>
-            </div>
-        </div>
-    </section>
-    <!-- Join Our Mailing List -->
-    <section class="pt_58" id="contact">
-        <div class="mb_100">
-            <div class="container">
-                <div class="mail_box d-flex justify-content-center mx-auto position-relative">
-                    <div class="mail_absolute">
-                        <img src="./assets/images/png//mail-img.png" alt="mail_svg" class="max_wimg81">
-                    </div>
-                    <div class="blank">
-                        <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling color_white mb-0 pb_10 text-center">
-                            Join Our Mailing List
-                        </h2>
-                        <p class="fw-normal font_acumin-pro text-16 lh_24 color_white opacity_90 text-center">Get news,
-                            videos and deals
-                            straight to your inbox.</p>
-                        <div class="d-flex justify-content-between input_modify">
-                            <input type="email" placeholder="Enter your email address" class="mail_modify">
-                            <button
-                                class="fw-bold font_acumin-pro text-16 lh_19 color_white more-btn d-flex align-items-center justify-content-center ms-2">Subscribe</button>
-                        </div>
-                        <div class="d-flex gap-2 mt-4 align-items-center">
-                            <input type="checkbox" name="checkbox">
-                            <p class="fw-normal font_acumin-pro text-14 lh_14 opacity_90 color_white mb-0">I consent to
-                                receive
-                                emails & confirm I have read the <span class="fw-bold">privacy policy.</span></p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- .....................we are here............. -->
-    <section>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13940.130673195305!2d75.72602128371412!3d29.13422684934014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912333fffc1719d%3A0x7a0b89d9770b651b!2sSector%2013%2C%20Hisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1719377205883!5m2!1sen!2sin"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
-    </section>
-    <!-- footer -->
-    <footer class="bg-color2 py_38_25">
-        <div class="container">
-            <div class="align-items-center justify-content-between gap_65 d-xl-flex d-none">
-                <div class="d-flex align-items-center gap_10">
-                    <a href=""><img src="./assets/images/svg/loaction2.svg" alt="loction1"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
-                </div>
-                <div class="d-flex align-items-center gap_10">
-                    <a target="_blank" href="mailto:someone@example.com"><img src="./assets/images/svg/mail-2.svg"
-                            alt="mail2"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        book@dryiceblastingpro.co.uk</p>
-                </div>
-                <div class="d-flex align-items-center gap_10">
-                    <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-logo.svg"
-                            alt="phonelogo"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        01865123456</p>
-                </div>
-                <div class="d-flex align-items-center gap_10">
-                    <a href=""><img src="./assets/images/svg/timerlogo.svg" alt="timerlogo"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        Mon -
-                        Fri: 9am to 5pm</p>
-                </div>
-            </div>
-            <div class="hero-slider py_14 d-xl-none d-block" id="heroslider">
-                <div class="d-flex align-items-center gap_10">
-                    <a href=""><img src="./assets/images/svg/loaction2.svg" alt="loction1"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
-                </div>
-                <div class="d-flex align-items-center gap_10">
-                    <a target="_blank" href="mailto:someone@example.com"><img src="./assets/images/svg/mail-2.svg"
-                            alt="mail2"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        book@dryiceblastingpro.co.uk</p>
-                </div>
-                <div class="d-flex align-items-center gap_10">
-                    <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-logo.svg"
-                            alt="phonelogo"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        01865123456</p>
-                </div>
-                <div class="d-flex align-items-center gap_10">
-                    <a href=""><img src="./assets/images/svg/timerlogo.svg" alt="timerlogo"></a>
-                    <p
-                        class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
-                        Mon -
-                        Fri: 9am to 5pm</p>
-                </div>
-            </div>
-            <div class="row my_57_48">
-                <div class="col-lg-5 col-12">
-                    <a href=""><img src="./assets/images/png/footerlogo.png" alt="footerlogo" class="w_img85"></a>
-                    <p class="fw-normal text-16 lh_25 opacity_70 color_white max_w350 mb-0 mt_10">IceBlastPro is
-                        Oxfordshire's Dry Ice Car Cleaning specialists. Removing dirt and grime in hard to reach areas
-                        with a
-                        non-abrasive Dry Ice Blasting technique that requires no chemicals and leaves no mess.</p>
-                </div>
-                <div class="col-lg-7 col-12 pt-4 pt-lg-0">
-                    <div class="row">
-                        <div class="col-sm-4 col-6">
-                            <ul class="ps-0 mb-0">
-                                <li class="font_acumin-pro fw-bold text-18 lh_27 color_white pb-3">Quick Link</li>
-                                <li class="pb_12"><a
-                                        class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="#home">Home</a></li>
-                                <li class="pb_12"><a
-                                        class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="#about">About Us</a></li>
-                                <li class="pb_12"><a
-                                        class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="#services">Services</a></li>
-                                <li class="pb_12"><a
-                                        class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="#blog">Blog</a></li>
-                                <li class="pb_12"><a
-                                        class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="#faq">FAQ’se</a></li>
-                                <li><a class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="#contact">Contact Us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4 col-6 d-flex justify-content-lg-center">
-                            <ul class="ps-0 mb-0">
-                                <li class="font_acumin-pro fw-bold text-18 lh_27 color_white pb-3">Legal Information
-                                </li>
-                                <li class="pb_12"><a
-                                        class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="">Terms of Service</a></li>
-                                <li><a class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
-                                        href="">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-4 col-6 d-flex justify-content-lg-end pt-4 pt-sm-0">
-                            <div class="blank">
-                                <p class="font_acumin-pro fw-bold text-18 lh_27 color_white pb-3 mb-0">Follow us</p>
-                                <div class="d-flex align-items-center gap_12 pb_18">
-                                    <a target="_blank" class="icon-hover" href="https://www.instagram.com/"><img
-                                            src="./assets/images/svg/insta_icon.svg" alt="instaicon"></a>
-                                    <a target="_blank"
-                                        class="fw-normal text-16 lh_24 font_acumin-pro opacity_70 color_white hover_nav transtion"
-                                        href="https://www.instagram.com/">Instagram</a>
-                                </div>
-                                <div class="d-flex align-items-center gap_12 pb_18">
-                                    <a target="_blank" class="icon-hover" href="https://www.tiktok.com/about"><img
-                                            src="./assets/images/svg/tiktok_icon.svg" alt="tiktokicon"></a>
-                                    <a target="_blank"
-                                        class="fw-normal text-16 lh_24 font_acumin-pro opacity_70 color_white hover_nav transtion"
-                                        href="https://www.tiktok.com/about">Tiktok</a>
-                                </div>
-                                <div class="d-flex align-items-center gap_12">
-                                    <a target="_blank" class="icon-hover" href="https://www.youtube.com/"><img
-                                            src="./assets/images/svg/youtube_icon.svg" alt="youtubeicon"></a>
-                                    <a target="_blank"
-                                        class="fw-normal text-16 lh_24 font_acumin-pro opacity_70 color_white hover_nav transtion"
-                                        href="https://www.youtube.com/">YouTube</a>
-                                </div>
+                        <div class="blank">
+                            <h2 class="fw-bold text-48 md_lh_57 lh_43 font_titling color_white mb-0 pb_10 text-center">
+                                Join Our Mailing List
+                            </h2>
+                            <p class="fw-normal font_acumin-pro text-16 lh_24 color_white opacity_90 text-center">Get news,
+                                videos and deals
+                                straight to your inbox.</p>
+                            <div class="d-flex justify-content-between input_modify">
+                                <input type="email" placeholder="Enter your email address" class="mail_modify">
+                                <button
+                                    class="fw-bold font_acumin-pro text-16 lh_19 color_white more-btn d-flex align-items-center justify-content-center ms-2">Subscribe</button>
                             </div>
-
+                            <div class="d-flex gap-2 mt-4 align-items-center">
+                                <input type="checkbox" name="checkbox">
+                                <p class="fw-normal font_acumin-pro text-14 lh_14 opacity_90 color_white mb-0">I consent to
+                                    receive
+                                    emails & confirm I have read the <span class="fw-bold">privacy policy.</span></p>
+                            </div>
                         </div>
+        
                     </div>
                 </div>
             </div>
-            <p class="fw-normal text-14 lh_16 opacity_70 color_white font_acumin-pro text-center">
-                Copyright©2024(IceBlastPro) All Rights Reserved.</p>
-        </div>
-        <div class="topBtn d-flex justify-content-center align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi bi-chevron-double-up"
-                viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z" />
-                <path fill-rule="evenodd"
-                    d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
-            </svg>
-        </div>
-    </footer>
-
-    <!-- script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
-        integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+        </section>
+        <!-- .....................we are here............. -->
+        <section>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13940.130673195305!2d75.72602128371412!3d29.13422684934014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912333fffc1719d%3A0x7a0b89d9770b651b!2sSector%2013%2C%20Hisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1719377205883!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" class="w-100"></iframe>
+        </section>
+        <!-- footer -->
+        <footer class="bg-color2 py_38_25">
+            <div class="container">
+                <div class="align-items-center justify-content-between gap_65 d-xl-flex d-none">
+                    <div class="d-flex align-items-center gap_10">
+                        <a href=""><img src="./assets/images/svg/loaction2.svg" alt="loction1"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
+                    </div>
+                    <div class="d-flex align-items-center gap_10">
+                        <a target="_blank" href="mailto:someone@example.com"><img src="./assets/images/svg/mail-2.svg"
+                                alt="mail2"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            book@dryiceblastingpro.co.uk</p>
+                    </div>
+                    <div class="d-flex align-items-center gap_10">
+                        <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-logo.svg"
+                                alt="phonelogo"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            01865123456</p>
+                    </div>
+                    <div class="d-flex align-items-center gap_10">
+                        <a href=""><img src="./assets/images/svg/timerlogo.svg" alt="timerlogo"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            Mon -
+                            Fri: 9am to 5pm</p>
+                    </div>
+                </div>
+                <div class="hero-slider py_14 d-xl-none d-block" id="heroslider">
+                    <div class="d-flex align-items-center gap_10">
+                        <a href=""><img src="./assets/images/svg/loaction2.svg" alt="loction1"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            Crawley Mill Industrial Estate, Witney, Oxfordshire</p>
+                    </div>
+                    <div class="d-flex align-items-center gap_10">
+                        <a target="_blank" href="mailto:someone@example.com"><img src="./assets/images/svg/mail-2.svg"
+                                alt="mail2"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            book@dryiceblastingpro.co.uk</p>
+                    </div>
+                    <div class="d-flex align-items-center gap_10">
+                        <a target="_blank" href="tel:+4733378901"><img src="./assets/images/svg/phone-logo.svg"
+                                alt="phonelogo"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            01865123456</p>
+                    </div>
+                    <div class="d-flex align-items-center gap_10">
+                        <a href=""><img src="./assets/images/svg/timerlogo.svg" alt="timerlogo"></a>
+                        <p class="font_acumin-pro text-16 lh_24 fw-normal color_white opacity_70 mb-0 text-nowrap text_hover">
+                            Mon -
+                            Fri: 9am to 5pm</p>
+                    </div>
+                </div>
+                <div class="row my_57_48">
+                    <div class="col-lg-5 col-12">
+                        <a href=""><img src="./assets/images/png/footerlogo.png" alt="footerlogo" class="w_img85"></a>
+                        <p class="fw-normal text-16 lh_25 opacity_70 color_white max_w350 mb-0 mt_10">IceBlastPro is
+                            Oxfordshire's Dry Ice Car Cleaning specialists. Removing dirt and grime in hard to reach areas
+                            with a
+                            non-abrasive Dry Ice Blasting technique that requires no chemicals and leaves no mess.</p>
+                    </div>
+                    <div class="col-lg-7 col-12 pt-4 pt-lg-0">
+                        <div class="row">
+                            <div class="col-sm-4 col-6">
+                                <ul class="ps-0 mb-0">
+                                    <li class="font_acumin-pro fw-bold text-18 lh_27 color_white pb-3">Quick Link</li>
+                                    <li class="pb_12"><a
+                                            class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="#home">Home</a></li>
+                                    <li class="pb_12"><a
+                                            class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="#about">About Us</a></li>
+                                    <li class="pb_12"><a
+                                            class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="#services">Services</a></li>
+                                    <li class="pb_12"><a
+                                            class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="#blog">Blog</a></li>
+                                    <li class="pb_12"><a
+                                            class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="#faq">FAQ’se</a></li>
+                                    <li><a class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="#contact">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 col-6 d-flex justify-content-lg-center">
+                                <ul class="ps-0 mb-0">
+                                    <li class="font_acumin-pro fw-bold text-18 lh_27 color_white pb-3">Legal Information
+                                    </li>
+                                    <li class="pb_12"><a
+                                            class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="">Terms of Service</a></li>
+                                    <li><a class="fw-normal text-16 lh_25 color_white opacity_70 hover_nav transtion"
+                                            href="">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 col-6 d-flex justify-content-lg-end pt-4 pt-sm-0">
+                                <div class="blank">
+                                    <p class="font_acumin-pro fw-bold text-18 lh_27 color_white pb-3 mb-0">Follow us</p>
+                                    <div class="d-flex align-items-center gap_12 pb_18">
+                                        <a target="_blank" class="icon-hover" href="https://www.instagram.com/"><img
+                                                src="./assets/images/svg/insta_icon.svg" alt="instaicon"></a>
+                                        <a target="_blank"
+                                            class="fw-normal text-16 lh_24 font_acumin-pro opacity_70 color_white hover_nav transtion"
+                                            href="https://www.instagram.com/">Instagram</a>
+                                    </div>
+                                    <div class="d-flex align-items-center gap_12 pb_18">
+                                        <a target="_blank" class="icon-hover" href="https://www.tiktok.com/about"><img
+                                                src="./assets/images/svg/tiktok_icon.svg" alt="tiktokicon"></a>
+                                        <a target="_blank"
+                                            class="fw-normal text-16 lh_24 font_acumin-pro opacity_70 color_white hover_nav transtion"
+                                            href="https://www.tiktok.com/about">Tiktok</a>
+                                    </div>
+                                    <div class="d-flex align-items-center gap_12">
+                                        <a target="_blank" class="icon-hover" href="https://www.youtube.com/"><img
+                                                src="./assets/images/svg/youtube_icon.svg" alt="youtubeicon"></a>
+                                        <a target="_blank"
+                                            class="fw-normal text-16 lh_24 font_acumin-pro opacity_70 color_white hover_nav transtion"
+                                            href="https://www.youtube.com/">YouTube</a>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="fw-normal text-14 lh_16 opacity_70 color_white font_acumin-pro text-center">
+                    Copyright©2024(IceBlastPro) All Rights Reserved.</p>
+            </div>
+            <div class="topBtn d-flex justify-content-center align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="white" class="bi bi-chevron-double-up"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708z" />
+                    <path fill-rule="evenodd"
+                        d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+                </svg>
+            </div>
+        </footer>
+        
+        <!-- script -->
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.2.0/swiper-bundle.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+            integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+            integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <script src="./assets/js/script.js"></script>
+</div>
 </body>
 
 </html>

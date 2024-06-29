@@ -16,65 +16,75 @@ $('.hero-slider').slick({
     pauseOnHover: true,
     cssEase: 'linear',
 });
-$('.responsive').slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    arrows: true,
-    speed: 300,
-    centerPadding: '100px',
-    infinite: true,
-    autoplaySpeed: 5000,
-    // autoplay: true,
-    prevArrow: ".prev",
-    nextArrow: ".next",
-    responsive: [
-        {
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-            }
-        },
-        {
-            breakpoint: 900,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
 
-            }
-        }
-    ]
-});
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     centerMode: true,
+//     arrows: true,
+//     speed: 300,
+//     centerPadding: '100px',
+//     infinite: true,
+//     autoplaySpeed: 5000,
+//     // autoplay: true,
+//     prevArrow: ".prev",
+//     nextArrow: ".next",
+//     responsive: [
+//         {
+//             breakpoint: 1200,
+//             settings: {
+//                 slidesToShow: 3,
+//                 slidesToScroll: 3,
+//                 infinite: true,
+//             }
+//         },
+//         {
+//             breakpoint: 900,
+//             settings: {
+//                 slidesToShow: 2,
+//                 slidesToScroll: 1,
+//                 infinite: true,
+//             }
+//         },
+//         {
+//             breakpoint: 600,
+//             settings: {
+//                 slidesToShow: 1,
+//                 slidesToScroll: 1,
+//                 infinite: true,
+
+//             }
+//         }
+//     ]
+// });
 
 // vedio
-document.addEventListener('DOMContentLoaded', function () {
-    const video = document.getElementById('videoPlayer');
-    const playButton = document.getElementById('playButton');
-
-    playButton.addEventListener('click', function () {
-        if (video.paused) {
-            video.play();
-            playButton.style.display = '';
-        } else {
-            video.pause();
-            playButton.style.display = 'block';
-        }
-    });
-
-    video.addEventListener('ended', function () {
-        playButton.style.display = 'block';
-    });
+var carousel = new Swiper(".swiper-carousel", {
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '#nextBtn',
+        prevEl: '#prevBtn',
+    },
+    effect: "coverflow",
+    loop: true,
+    centeredSlides: true,
+    slidesPerView: 1,
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 100,
+        depth: 150,
+        modifier: 1.5,
+        slideShadows: false,
+    },
+   
+    breakpoints: {
+        600: {
+            slidesPerView: 2.5,
+        },
+    },
+    
 });
 
 const accordionbtn2 = document.querySelectorAll(".accordionbtn2")
@@ -103,4 +113,9 @@ mybutton.addEventListener("click", function () {
     document.documentElement.scrollTop = 0;
 
 });
+
+AOS.init({
+    duration: 1200,
+    once: true
+})
 
