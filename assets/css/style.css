@@ -661,7 +661,7 @@ input[type=checkbox]:checked:before {
 }
 
 .mb_100 {
-    margin-bottom: -100px;
+    margin-bottom: -50px;
 }
 
 /* ............................slider...................... */
@@ -980,6 +980,8 @@ input[type=checkbox]:checked:before {
 }
 
 
+
+
 /* media_quaries */
 @media(max-width:991.99px) {
     .iconbox {
@@ -1057,7 +1059,7 @@ input[type=checkbox]:checked:before {
     }
 
     .mt_100 {
-        margin-top: -100px;
+        margin-top: -60px;
     }
 
 }
@@ -1217,6 +1219,10 @@ input[type=checkbox]:checked:before {
         padding: 68px 100px 40px 100px;
     }
 
+    .mb_100 {
+        margin-bottom: -100px;
+    }
+
 }
 
 @media(min-width:992px) {
@@ -1271,7 +1277,7 @@ input[type=checkbox]:checked:before {
     }
 
     .mt_1 {
-        margin-top: -3px !important;
+        margin-top: -2px !important;
     }
 
     .max_w613 {
@@ -1285,6 +1291,14 @@ input[type=checkbox]:checked:before {
 
     .mail_box {
         padding: 68px 226px 40px 227px;
+    }
+
+    .mb_19 {
+        margin-bottom: 19px;
+    }
+
+    .mb_6 {
+        margin-bottom: -7px;
     }
 
 }
@@ -1335,8 +1349,17 @@ input[type=checkbox]:checked:before {
     }
 
     .mb_50 {
-        margin-bottom: -130px;
+        margin-bottom: -30px;
     }
+
+    .mt_100 {
+        margin-top: -100px;
+    }
+
+    .mb_15 {
+        margin-bottom: -18px;
+    }
+
 }
 
 @media(min-width:1300px) {
@@ -1357,6 +1380,32 @@ input[type=checkbox]:checked:before {
     .next_button {
         right: 70px;
     }
+
+    .mb_1 {
+        margin-bottom: -1px;
+    }
+
+    .mb_6 {
+        margin-bottom: -6px;
+    }
+
+    .mb_15 {
+        margin-bottom: -4px;
+    }
+}
+
+@media(min-width:1500px) {
+    .mb_1 {
+        margin-bottom: -1px;
+    }
+
+    .mb_6 {
+        margin-bottom: -2px;
+    }
+
+    .mb_15 {
+        margin-bottom: -6px;
+    }
 }
 
 @media(min-width:1720px) {
@@ -1366,5 +1415,17 @@ input[type=checkbox]:checked:before {
 
     .next_button {
         right: 250px;
+    }
+
+    .mb_1 {
+        margin-bottom: -1px;
+    }
+
+    .mb_6 {
+        margin-bottom: -9px;
+    }
+
+    .mb_15 {
+        margin-bottom: -15px;
     }
 }
