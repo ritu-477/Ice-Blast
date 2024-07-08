@@ -69,6 +69,7 @@ var carousel = new Swiper(".swiper-carousel", {
     },
     effect: "coverflow",
     loop: true,
+    autoplay: true,
     centeredSlides: true,
     slidesPerView: 1,
     coverflowEffect: {
@@ -81,6 +82,7 @@ var carousel = new Swiper(".swiper-carousel", {
 
     breakpoints: {
         600: {
+            autoplay: true,
             slidesPerView: 2.5,
         },
     },

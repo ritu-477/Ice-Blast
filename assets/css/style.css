@@ -681,7 +681,7 @@ input[type=checkbox]:checked:before {
     height: 42px;
     border-radius: 45px;
     font-size: 24px;
-    background-color: var(--fc-white);
+    background-color: var(--btn-bg);
     border: solid 1px var(--fc-white);
     box-shadow: 0px 0px 26.2px 0px var(--btn-shadow);
     cursor: pointer;
@@ -690,11 +690,11 @@ input[type=checkbox]:checked:before {
 }
 
 .prev_button:hover {
-    background: var(--btn-bg);
+    background: var(--fc-white);
 }
 
 .prev_button:hover svg path {
-    fill: var(--fc-white);
+    fill: var(--btn-bg);
 }
 
 .next_button {
@@ -705,7 +705,7 @@ input[type=checkbox]:checked:before {
     height: 42px;
     border-radius: 45px;
     font-size: 24px;
-    background-color: var(--fc-white);
+    background-color: var(--btn-bg);
     cursor: pointer;
     border: solid 1px var(--fc-white);
     transition: all .3s linear;
@@ -713,11 +713,11 @@ input[type=checkbox]:checked:before {
 }
 
 .next_button:hover {
-    background: var(--btn-bg);
+    background: var(--fc-white);
 }
 
 .next_button:hover svg path {
-    fill: var(--fc-white);
+    fill: var(--btn-bg);
 }
 
 .mt_57 {
@@ -1300,6 +1300,9 @@ input[type=checkbox]:checked:before {
     .mb_6 {
         margin-bottom: -7px;
     }
+        .mb_15 {
+            margin-bottom: -6px;
+        }
 
 }
 
@@ -1382,11 +1385,11 @@ input[type=checkbox]:checked:before {
     }
 
     .mb_1 {
-        margin-bottom: -1px;
+        margin-bottom: -2px;
     }
 
     .mb_6 {
-        margin-bottom: -6px;
+        margin-bottom: -10px;
     }
 
     .mb_15 {
@@ -1404,7 +1407,7 @@ input[type=checkbox]:checked:before {
     }
 
     .mb_15 {
-        margin-bottom: -6px;
+        margin-bottom: -2px;
     }
 }
 
@@ -1418,14 +1421,14 @@ input[type=checkbox]:checked:before {
     }
 
     .mb_1 {
-        margin-bottom: -1px;
+        margin-bottom: -3px;
     }
 
     .mb_6 {
-        margin-bottom: -9px;
+        margin-bottom: -3px;
     }
 
     .mb_15 {
-        margin-bottom: -15px;
+        margin-bottom: -21px;
     }
 }
