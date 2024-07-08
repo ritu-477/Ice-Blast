@@ -1300,9 +1300,9 @@ input[type=checkbox]:checked:before {
     .mb_6 {
         margin-bottom: -7px;
     }
-        .mb_15 {
+        /* .mb_15 {
             margin-bottom: -6px;
-        }
+        } */
 
 }
 
@@ -1360,7 +1360,7 @@ input[type=checkbox]:checked:before {
     }
 
     .mb_15 {
-        margin-bottom: -18px;
+        margin-bottom: -26px;
     }
 
 }
