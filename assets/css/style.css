@@ -1410,6 +1410,14 @@ input[type=checkbox]:checked:before {
         margin-bottom: -2px;
     }
 }
+@media(min-width:1600px) {
+    .img-absolute1 {
+        position: static;
+    }
+    .img-absolute2{
+        position: static;
+    }
+}
 
 @media(min-width:1720px) {
     .prev_button {
